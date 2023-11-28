@@ -1,0 +1,45 @@
+main {
+    flex-direction: column;
+}
+
+section form  {
+    display: flex;
+    flex-direction: column;
+}
+
+section form div {
+    margin-bottom: 1em;
+}
+
+section form ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+section form label {
+     display: inline-block;
+     width: 100px;
+}
+
+/* every label that is preceded by an input-checkbox
+    overwrites the default width given to all other labels */
+section form input[type="checkbox"] ~ label {
+    width: auto;
+}
+
+/* the first element after a label in a span within a form
+    which is in our site always the input element */
+section form div label + * {
+    width: 200px;
+}
+
+input[type="checkbox"]{
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    margin-top: 1em;
+    padding: 0.5em;
+}
+
+
