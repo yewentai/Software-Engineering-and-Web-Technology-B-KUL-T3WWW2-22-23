@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BookBinder{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}"/>
+{% endblock %}
+
+{% block content %}
+    <main class="home-recommendation">
+        <div class="book-cards">
+            {% for book in popular_books %}
+                <div class="book-card" data-isbn="{{ book.isbn }}">
+                    <div class="content-wrapper">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="book cover placeholder" class="book-card-img" onclick="window.location.href='{{ path('book_show', {'id': book.id}) }}'">
+                        <div class="card-content">
+                            <h3 class="book-name">Book Title</h3>
+                            <h4 class="book-by">by <span>Book Author</span></h4>
+                            <p class="book-description">Book Description</p>
+                        </div>
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    {% block javascripts %}
+        {{ parent() }}
+        <script src="{{ asset('js/home.js') }}"></script>
+    {% endblock %}
+{% endblock %}

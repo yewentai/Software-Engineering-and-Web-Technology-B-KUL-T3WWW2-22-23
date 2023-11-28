@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Terms and Conditions{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/terms.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="terms_and_conditions">
+        <h1>Terms and Conditions</h1>
+        <p>
+            Please read these terms and conditions carefully before using our website.
+        </p>
+        <p>
+            <strong>1. Acceptance of Terms</strong><br>
+            By accessing or using our website, you agree to be bound by these terms and conditions. If you do not agree with any part of these terms and conditions, you must not use our website.
+        </p>
+        <p>
+            <strong>2. Intellectual Property</strong><br>
+            The content and materials on our website are protected by intellectual property laws. You may not modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer or sell any information or content obtained from our website.
+        </p>
+        <p>
+            <strong>3. User Responsibilities</strong><br>
+            You are responsible for the accuracy and legality of any information you submit or post on our website. You must not engage in any activity that may harm, interfere with, or disrupt our website or the servers and networks connected to it.
+        </p>
+        <p>
+            <strong>4. Limitation of Liability</strong><br>
+            We shall not be liable for any direct, indirect, incidental, consequential, or exemplary damages arising from your use of our website.
+        </p>
+        <p>
+            <strong>5. Governing Law</strong><br>
+            These terms and conditions shall be governed by and construed in accordance with the laws of Belgium.
+        </p>
+        <p>
+            For more detailed information, please refer to our full terms and conditions document.
+        </p>
+    </section>
+{% endblock %}

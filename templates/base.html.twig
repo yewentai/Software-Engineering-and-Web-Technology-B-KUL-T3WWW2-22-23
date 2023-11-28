@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}BookBinder{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="{{ asset('images/bookbinder_icon.png') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- the search icon -->
+        <link rel="stylesheet" href="{{ asset('css/base.css') }}">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+
+    <body>
+        <header>
+            <div class="header-search">
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                    <button type="submit" class="searchButton">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="header-logo" onclick="window.location.href='{{ path('app_home') }}'">Book<span>Binder</span></div>
+
+            <div class="header-user">
+                {% if app.user %}
+                    <div class="user-avatar">
+                        <img src="{{ asset('images/anonymous_user.png') }}" alt="" class="user-img" onclick="window.location.href='{{ path('app_user', {'id': app.user.getId}) }}'">
+                    </div>
+                {% else %}
+                    <div class="login-register">
+                        <button class="login_button" type="button" onclick="window.location.href='{{ path('app_login') }}'">Sign in</button>
+                        <button class="register_button" type="button" onclick="window.location.href='{{ path('app_register') }}'">Register</button>
+                    </div>
+                {% endif %}
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <footer>
+            <p>Copyright &copy 2023 WebTech. KUL&nbsp;All Rights Reserved.&nbsp;&nbsp;
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+            </p>
+        </footer>
+
+    </body>
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</html>

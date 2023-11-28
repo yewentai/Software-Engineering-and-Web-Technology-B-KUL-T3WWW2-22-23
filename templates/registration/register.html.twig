@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}" />
+{% endblock %}
+
+{% block content %}
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+    <section class="register_box">
+        {{ form_start(registrationForm) }}
+        <div class="row">
+            <h1>Register</h1>
+
+            <label>Display Name</label>
+            <input
+                    name="{{ field_name(registrationForm.displayName) }}"
+                    value="{{ field_value(registrationForm.displayName) }}"
+                    placeholder="This is displayed to other users"
+                    type="text"
+            />
+            {{ form_errors(registrationForm.displayName) }}
+
+            <label>Email</label>
+            <input
+                    name="{{ field_name(registrationForm.email) }}"
+                    value="{{ field_value(registrationForm.email) }}"
+                    placeholder="Your email address"
+                    type="text"
+            />
+            {{ form_errors(registrationForm.email) }}
+
+            <label>Password</label>
+            <input
+                    name="{{ field_name(registrationForm.plainPassword) }}"
+                    value="{{ field_value(registrationForm.plainPassword) }}"
+                    placeholder="6-20 characters"
+                    type="password"
+            />
+            {{ form_errors(registrationForm.plainPassword) }}
+
+            <div class="checkbox mb-3">
+            <label>
+                <input
+                        name="{{ field_name(registrationForm.agreeTerms) }}"
+                        value="{{ field_value(registrationForm.agreeTerms) }}"
+                        placeholder="{{ field_label(registrationForm.agreeTerms) }}"
+                        type="checkbox"
+                />
+                I agree to the <a href="{{ path('app_terms') }}">terms and conditions</a>
+            </label>
+
+            {{ form_errors(registrationForm.agreeTerms) }}
+
+            <button type="submit" class="btn btn-primary">
+                Register
+            </button>
+
+        </div>
+        {{ form_end(registrationForm) }}
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}

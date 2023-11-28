@@ -1,0 +1,36 @@
+/* Background styles */
+body, html {
+    height: 100%;
+}
+
+.terms_and_conditions {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.terms_and_conditions h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.terms_and_conditions p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.terms_and_conditions strong {
+    font-weight: bold;
+}
+
+.terms_and_conditions a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.terms_and_conditions a:hover {
+    text-decoration: underline;
+}

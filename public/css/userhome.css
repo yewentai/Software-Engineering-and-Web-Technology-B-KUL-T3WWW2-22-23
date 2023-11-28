@@ -1,0 +1,72 @@
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+section {
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+}
+
+.user_info {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.user_email,
+.user_gender,
+.user_age,
+.user_city {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.user_email a{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #1d4ed8;
+}
+
+.user_subscribes_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0 15px 0 15px;
+    padding: 0;
+}
+
+.user_subscribes_item {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.book_photo {
+    width: auto;
+    height: 200px;
+    cursor: pointer;
+}
+
+.book_title {
+    margin-top: 5px;
+    font-size: 15px;
+}
